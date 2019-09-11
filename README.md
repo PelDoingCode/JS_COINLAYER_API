@@ -56,6 +56,7 @@ const apiCall = (selector, options = {}) => {
 ```
 
 Here is a way to make price more lisible for human using the comma system, do not hesitate to change it : 
+*Only useful for huge amount in crypto currency.....*
 ```
    function numberWithCommas(x) {
        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -73,14 +74,23 @@ API call :
       success: function(json) {
 ```
 Then we need to get the live price of _BTC_, _ETH_ and _LTC_ from the JSON :
+Here for BITCOIN : 
 ```
           const btcPrice = json.rates.BTC;
+```
+Then we need to add the price to the place we want and do the conversion from the FIAT currency of the website to Bitcoin : 
+```
           divBTC.forEach((element) => {
+            # little console.log to se what we get 
             # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
-            let constant = element.parentElement.querySelector(".btc-parent").innerHTML;
-            # console.log(constant);
-            constant = constant*btcPrice;
-            element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
+            
+            # here we access the parent of where we want to display the price which is the price in FIAT
+            let fiat_amount = element.parentElement.querySelector(".btc-parent").innerHTML;
+            # console.log(fiat_amount);
+            
+            # then we convert the amount of the price in FIAT to BTC
+            constant = fiat_amount/btcPrice;
+            element.insertAdjacentHTML("beforeend", "Current value : BTC" + " " + numberWithCommas(constant));
           })
 ```
 
@@ -89,11 +99,9 @@ The same for LTC :
 
           const ltcPrice = json.rates.LTC;
           divLTC.forEach((element) => {
-            # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
             let constant = element.parentElement.querySelector(".ltc-parent").innerHTML;
-            # console.log(constant);
-            constant = constant*ltcPrice;
-            element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
+            constant = constant/ltcPrice;
+            element.insertAdjacentHTML("beforeend", "Current value : LTC" + " " + numberWithCommas(constant));
           }) ```
 
 
@@ -102,13 +110,11 @@ The same for ETH :
 ```
           const ethPrice = json.rates.ETH;
           divETH.forEach((element) => {
-            # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
             let constant = element.parentElement.querySelector(".eth-parent").innerHTML;
-            # console.log(constant);
-            constant = constant*ethPrice;
-            element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
+            constant = constant/ethPrice;
+            element.insertAdjacentHTML("beforeend", "Current value : ETH" + " " + numberWithCommas(constant));
           })
-          # here is the way to make a test
+          # here is the way to make a test to have acces to all the JSON from CoinLayer
           # console.log(json.rates);
       }
     });
