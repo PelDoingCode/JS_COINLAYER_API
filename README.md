@@ -1,4 +1,4 @@
-###### Repository to add example to COINLAYER crypto-price API : [CoinLayer](https://coinlayer.com/) :zap:
+###### Repository to add a relevant example to COINLAYER crypto-price API documentation : [CoinLayer](https://coinlayer.com/) :zap:
 
 #### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? :dragon_face:
 
