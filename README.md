@@ -1,6 +1,6 @@
 ###### Repository to add example to COINLAYER crypto-price API : [CoinLayer](https://coinlayer.com/) :zap:
 
-#### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? 
+#### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? :dragon_face:
 
 Four steps  :desktop_computer: : 
 
@@ -32,76 +32,74 @@ $.ajax({
 
 To make sure it works, check your console (and network) in the inspector to check the JSON you get and where the problem is from.
 
+
 ### 3. Lets say now we have an online shop that accept _Bitcoin_, _Ethereum_ and _Litecoin_, we want to add the price in these crypto-currencies : 
 
-###### Here is, for me the easiest way to do it : 
+###### Here is, for me the easiest way to do it using ES6 : (copy paste the code in app.js not this one :warning:)
 
+Here is the code from app.js file but explained, like that you can more easily adapt it.
+
+Create a variable to add your public key (the one in used doesn't work, use yours) to make your code more lisible :
+```
 let endpoint = 'live'
 let access_key = 'b93a2f2c2e7899142fc061d693de0dc5'
+```
 
+
+Then use _querySelector_ or _getElementById_ to target where you want to add the price : 
+
+```
 const apiCall = (selector, options = {}) => {
-  // const divRates = document.getElementById("rates");
   const divBTC = document.querySelectorAll(".btc-price");
   const divLTC = document.querySelectorAll(".ltc-price");
   const divETH = document.querySelectorAll(".eth-price");
-  // const divLTC = document.getElementById("ltc-price");
-  // const divETH = document.getElementById("eth-price");
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+```
 
+Here is a way to make price more lisible for human using the comma system, do not hesitate to change it : 
+```
+   function numberWithCommas(x) {
+       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+   }
+```
+
+Now that we have retreive all event where we want to display price, we want to call the price when we need it :
+```
   if(divBTC || divLTC || divETH) {
     $.ajax({
       url: 'http://api.coinlayer.com/api/' + endpoint + '?access_key=' + access_key,
       dataType: 'jsonp',
       success: function(json) {
-
           const btcPrice = json.rates.BTC;
           divBTC.forEach((element) => {
-            // console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
+            # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
             let constant = element.parentElement.querySelector(".btc-parent").innerHTML;
-            // console.log(constant);
+            # console.log(constant);
             constant = constant*btcPrice;
             element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
-
           const ltcPrice = json.rates.LTC;
           divLTC.forEach((element) => {
-            // console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
+            # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
             let constant = element.parentElement.querySelector(".ltc-parent").innerHTML;
-            // console.log(constant);
+            # console.log(constant);
             constant = constant*ltcPrice;
             element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
-
           const ethPrice = json.rates.ETH;
           divETH.forEach((element) => {
-            // console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
+            # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
             let constant = element.parentElement.querySelector(".eth-parent").innerHTML;
-            // console.log(constant);
+            # console.log(constant);
             constant = constant*ethPrice;
             element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
-
-          // const ltcPrice = json.rates.LTC;
-          // divLTC.insertAdjacentHTML("beforeend", ltcPrice);
-
-          // const ethPrice = json.rates.ETH;
-          // divETH.insertAdjacentHTML("beforeend", ethPrice);
-          // // // exchange rata data is stored in json.rates
-
-
-          // // target currency is stored in json.target
-          // alert(json.target);
-
-          // // timestamp can be accessed in json.timestamp
-          // alert(json.timestamp);
-          // console.log(json.rates);
-
+          # here is the way to make a test
+          # console.log(json.rates);
       }
     });
   }
 };
+
 
 
 
