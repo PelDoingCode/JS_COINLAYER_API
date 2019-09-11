@@ -63,12 +63,17 @@ Here is a way to make price more lisible for human using the comma system, do no
 ```
 
 Now that we have retreive all event where we want to display price, we want to call the price when we need it :
+
+API call : 
 ```
   if(divBTC || divLTC || divETH) {
     $.ajax({
       url: 'http://api.coinlayer.com/api/' + endpoint + '?access_key=' + access_key,
       dataType: 'jsonp',
       success: function(json) {
+```
+Then we need to get the live price of _BTC_, _ETH_ and _LTC_ from the JSON :
+```
           const btcPrice = json.rates.BTC;
           divBTC.forEach((element) => {
             # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
@@ -77,6 +82,11 @@ Now that we have retreive all event where we want to display price, we want to c
             constant = constant*btcPrice;
             element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
+```
+
+The same for LTC :
+
+
           const ltcPrice = json.rates.LTC;
           divLTC.forEach((element) => {
             # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
@@ -84,7 +94,12 @@ Now that we have retreive all event where we want to display price, we want to c
             # console.log(constant);
             constant = constant*ltcPrice;
             element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
-          })
+          }) ```
+
+
+The same for ETH :
+
+```
           const ethPrice = json.rates.ETH;
           divETH.forEach((element) => {
             # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
@@ -99,7 +114,7 @@ Now that we have retreive all event where we want to display price, we want to c
     });
   }
 };
-
+```
 
 
 
