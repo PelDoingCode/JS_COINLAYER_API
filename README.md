@@ -13,22 +13,22 @@ Four steps  :desktop_computer: :
 
 ### 2. Simple API call to get the price of BTC :  
 
-// set endpoint and your API access key
+The "endpoint" tag allow you to acces the last price update of CoinLayer.
+
+The fetch of your API call is in the _json.rates_.
+```
 endpoint = 'live'
 access_key = 'YOUR_ACCESS_KEY';
 
-// get the most recent exchange rates via the "live" endpoint:
 $.ajax({
     url: 'http://api.coinlayer.com/api/' + endpoint + '?access_key=' + access_key,   
     dataType: 'jsonp',
     success: function(json) {
 
-        // exchange rata data is stored in json.rates
         alert(json.rates.BTC);  
     }
 });
-
-
+```
 
 
 
