@@ -2,7 +2,7 @@
 
 #### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? 
 
-Four steps :desktop_computer: : 
+Four steps  :desktop_computer: : 
 
 1. Sign to [CoinLayer](https://coinlayer.com/), choose your plan (take free plan to test 500 free calls) : and get your API key
 2. Call [CoinLayer](https://coinlayer.com/) API using Ajax to retreive information you want in a JSON
@@ -27,5 +27,6 @@ Four steps :desktop_computer: :
 
 
 
+-----------------------------------------------------------------------------------------------------------------------------
 
-Come follow my Github account for more content : https://github.com/PelDoingCode
+Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 	
