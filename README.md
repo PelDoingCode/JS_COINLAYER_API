@@ -11,7 +11,7 @@ Four steps  :desktop_computer: :
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-### 2. Simple API call to get the price of BTC :  
+##  Simple API call to get the price of BTC :  
 
 The "endpoint" tag allow you to acces the last price update of CoinLayer.
 
@@ -33,7 +33,7 @@ $.ajax({
 To make sure it works, check your console (and network) in the inspector to check the JSON you get and where the problem is from.
 
 
-### 3. Lets say now we have an online shop that accept _Bitcoin_, _Ethereum_ and _Litecoin_, we want to add the price in these crypto-currencies : 
+##  Lets say now we have an online shop that accept _Bitcoin_, _Ethereum_ and _Litecoin_, we want to add the price in these crypto-currencies : 
 
 ###### Here is, for me the easiest way to do it using ES6 : (copy paste the code in app.js not this one :warning:)
 
@@ -122,7 +122,7 @@ The same for ETH :
 };
 ```
 
-
+## Now some HTML code to explain a bit more the code : 
 
 
 
