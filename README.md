@@ -1,3 +1,5 @@
+## An easy way to get cryptocurrency price on your webapp : 
+
 ###### Repository to add a relevant example to COINLAYER crypto-price API documentation : [CoinLayer](https://coinlayer.com/) :zap:
 
 #### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? :dragon_face:
@@ -124,9 +126,28 @@ The same for ETH :
 
 ## Now some HTML code to explain a bit more the code : 
 
+#### Example of HTML code to display crypto price using the code above : 
 
+Reminder of how the code above works : 
 
+We used ```document.querySelectorAll(".btc-price");``` to display the code beforend in class tag, and also ```parentElement.querySelector(".btc-parent").innerHTML```to get the value 'The_price' which refers to the price of the product. 
 
+```
+<body>
+    <div class="XXXXXXX">
+        <abbr> Name_of_your_product: <i class="btc-parent"> The_price </i></abbr>
+        <div class="btc-price">
+            <p> Value in Bitcoin </p>
+        </div>
+        <div class="eth-price">
+            <p> Value in Ethereum </p>
+        </div>
+        <div class="ltc-price">
+            <p> Value in Ethereum </p>
+        </div>
+    </div>
+</body>
+```
 
 
 
