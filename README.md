@@ -16,7 +16,7 @@ Four steps  :desktop_computer: :
 
 
 ##  Simple API call to get the price of BTC :  
-
+###### Here I use CoinLayer to get crypto price in USD, feel free to change the query to have them in another FIAT
 The "endpoint" tag allow you to acces the last price update of CoinLayer.
 
 The fetch of your API call is in the _json.rates_.
