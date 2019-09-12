@@ -37,7 +37,7 @@ To make sure it works, check your console (and network) in the inspector to chec
 
 ##  Lets say now we have an online shop that accept _Bitcoin_, _Ethereum_ and _Litecoin_, we want to add the price in these crypto-currencies : 
 
-###### Here is, for me the easiest way to do it using ES6 : (copy paste the code in app.js not this one :warning:)
+###### Here is for me the easiest way to do it using ES6 : (copy paste the code in app.js not this one :warning:)
 
 Here is the code from app.js file but explained, like that you can more easily adapt it.
 
@@ -139,25 +139,20 @@ We used ```document.querySelectorAll(".btc-price");``` to display the code befor
         <div class="btc-price">
             <p> Value in Bitcoin </p>
         </div>
+        
         <div class="eth-price">
             <p> Value in Ethereum </p>
         </div>
+        
         <div class="ltc-price">
             <p> Value in Ethereum </p>
         </div>
     </div>
 </body>
 ```
-
-
-
-
-
-
-
-
-
-
------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+#### Hope it was useful, thanks for the reading :octocat:	
+----------------------------------------------------------------------------------------------------------------------------
+License: MIT
 
 Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 	
