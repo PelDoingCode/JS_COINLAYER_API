@@ -1,0 +1,47 @@
+
+<!-- Here is an extract of the code using Ruby on Rails I used in one of my project : -->
+
+
+<div class="XXXX">
+
+  <% if airdrop.crypto.downcase == 'bitcoin'%>
+    <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
+    <div class="btc-price">
+
+    </div>
+
+  <% elsif airdrop.crypto.downcase == 'ethereum' %>
+    <abbr>Ethereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
+    <div class="eth-price">
+
+    </div>
+
+  <% elsif airdrop.crypto.downcase == 'litecoin' %>
+    <abbr>Łitecoin: <i class="ltc-parent"><%= airdrop.amount %></i></abbr>
+    <div class="ltc-price">
+
+    </div>
+  <% end %>
+
+</div>
+
+
+<!-- If you only want the code in HTML  -->
+
+
+<div class="XXXX">
+
+  <abbr> Your crypto : <i class="btc-parent"> Product price in the crypto you want</i></abbr>
+  <div class="btc-price">
+
+  </div>
+
+  <div class="eth-price">
+
+  </div>
+
+  <div class="ltc-price">
+
+  </div>
+
+</div>
