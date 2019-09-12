@@ -152,6 +152,24 @@ We used ```document.querySelectorAll(".btc-price");``` to display the code befor
     </div>
 </body>
 ```
+
+#### Here is an other example of how to display the price, if you want to display inline the API call : 
+ ###### *Here is the part of the code that change :* 
+
+JS code : 
+
+```
+document.querySelector(".inline-price").innerHTML = "Your product worth" + " " + "$" + " " + constant;
+```
+
+HTML code : 
+
+```
+<div class="inline-price">
+
+</div>
+```
+
 ----------------------------------------------------------------------------------------------------------------------------
 #### Hope it was useful, thanks for the reading :octocat:	
 Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 
