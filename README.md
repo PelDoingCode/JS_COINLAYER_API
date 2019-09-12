@@ -4,7 +4,7 @@
 
 #### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? :dragon_face:
 
-Four steps  :desktop_computer: : 
+* Four steps  :desktop_computer: : 
 
 1. Sign to [CoinLayer](https://coinlayer.com/), choose your plan (take free plan to test 500 free calls) : and get your API key
 2. Call [CoinLayer](https://coinlayer.com/) API using Ajax to retreive information you want in a JSON
@@ -19,7 +19,7 @@ Four steps  :desktop_computer: :
 ###### Here I use CoinLayer to get crypto price in USD, feel free to change the query to have them in another FIAT
 The "endpoint" tag allow you to acces the last price update of CoinLayer.
 
-The fetch of your API call is in the _json.rates_.
+* The fetch of your API call is in the _json.rates_.
 ```
 endpoint = 'live'
 access_key = 'YOUR_ACCESS_KEY';
@@ -43,7 +43,7 @@ To make sure it works, check your console (and network) in the inspector to chec
 
 Here is the code from app.js file but explained, like that you can more easily adapt it.
 
-Create a variable to add your public key (the one in used doesn't work, use yours) to make your code more lisible :
+* Create a variable to add your public key (the one in used doesn't work, use yours) to make your code more lisible :
 ```
 let endpoint = 'live'
 # replace here by your key from coinlayer (this one doesn't work of course :trollface:) 
@@ -51,7 +51,7 @@ let access_key = 'b93a2f2c2e7899342fc061d693de0dc5'
 ```
 
 
-Then use _querySelector_ or _getElementById_ to target where you want to add the price : 
+* Then use _querySelector_ or _getElementById_ to target where you want to add the price : 
 
 ```
 const apiCall = (selector, options = {}) => {
@@ -60,7 +60,8 @@ const apiCall = (selector, options = {}) => {
   const divETH = document.querySelectorAll(".eth-price");
 ```
 
-Here is a way to make price more lisible for human using the comma system, do not hesitate to change it : 
+* Here is a way to make price more lisible for human using the comma system, do not hesitate to change it : 
+
 *Only useful for huge amount in crypto currency.....* <Enter>
  *To have a better display do not hesitate (especially for BTC) to talk in sats or whatever to have a better number and not something like 0.000123456 for example*
     
@@ -70,7 +71,7 @@ Here is a way to make price more lisible for human using the comma system, do no
    }
 ```
 
-Now that we have retreive all event where we want to display price, we want to call the price when we need it.
+* Now that we have retreive all event where we want to display price, we want to call the price when we need it.
 
 API call : 
 ```
@@ -80,12 +81,13 @@ API call :
       dataType: 'jsonp',
       success: function(json) {
 ```
-Then we need to get the live price of _BTC_, _ETH_ and _LTC_ from the JSON :
-Here for BITCOIN : 
+* Then we need to get the live price of _BTC_, _ETH_ and _LTC_ from the JSON :
+
+* Here for BITCOIN : 
 ```
           const btcPrice = json.rates.BTC;
 ```
-Then we need to add the price to the place we want and do the conversion from the FIAT currency of the website to Bitcoin : 
+* Then we need to add the price to the place we want and do the conversion from the FIAT currency of the website to Bitcoin : 
 ```
           divBTC.forEach((element) => {
             # little console.log to se what we get 
@@ -101,7 +103,7 @@ Then we need to add the price to the place we want and do the conversion from th
           })
 ```
 
-The same for LTC :
+* The same for LTC :
 
 
           const ltcPrice = json.rates.LTC;
@@ -112,7 +114,7 @@ The same for LTC :
           }) ```
 
 
-The same for ETH :
+* The same for ETH :
 
 ```
           const ethPrice = json.rates.ETH;
@@ -130,7 +132,7 @@ The same for ETH :
 
 #### Example of HTML code to display crypto price using the code above : 
 
-Reminder of how the code above works : 
+* Reminder of how the code above works : 
 
 We used ```document.querySelectorAll(".btc-price");``` to display the code beforend in class tag, and also ```parentElement.querySelector(".price-parent").innerHTML```to get the value 'The_price' which refers to the price of the product. 
 
@@ -156,13 +158,13 @@ We used ```document.querySelectorAll(".btc-price");``` to display the code befor
 #### Here is an other example of how to display the price, if you want to display inline the API call : 
  ###### *Here is the part of the code that change :* 
 
-JS code : 
+* JS code : 
 
 ```
 document.querySelector(".inline-price").innerHTML = "Your product worth" + " " + "$" + " " + constant;
 ```
 
-HTML code : 
+* HTML code : 
 
 ```
 <div class="inline-price">
