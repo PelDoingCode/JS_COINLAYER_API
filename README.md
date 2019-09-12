@@ -12,6 +12,8 @@ Four steps  :desktop_computer: :
 4. Use Javascript (ES6) to interact with the DOM using events
 
 ----------------------------------------------------------------------------------------------------------------------------
+###### :warning: Use the code in app.js in the repository, and be carefull below I did the code to go from FIAT to crypto, in app.js it's the opposite :warning:
+
 
 ##  Simple API call to get the price of BTC :  
 
@@ -58,14 +60,16 @@ const apiCall = (selector, options = {}) => {
 ```
 
 Here is a way to make price more lisible for human using the comma system, do not hesitate to change it : 
-*Only useful for huge amount in crypto currency.....*
+*Only useful for huge amount in crypto currency.....* <Enter>
+* To have a better display do not hesitate (especially for BTC) to talk in sats or whatever to have a better number and not something like 0.000123456 for example*
+    
 ```
    function numberWithCommas(x) {
        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
    }
 ```
 
-Now that we have retreive all event where we want to display price, we want to call the price when we need it :
+Now that we have retreive all event where we want to display price, we want to call the price when we need it.
 
 API call : 
 ```
@@ -84,15 +88,15 @@ Then we need to add the price to the place we want and do the conversion from th
 ```
           divBTC.forEach((element) => {
             # little console.log to se what we get 
-            # console.log(element.parentElement.querySelector(".btc-parent").innerHTML);
+            # console.log(element.parentElement.querySelector(".price-parent").innerHTML);
             
             # here we access the parent of where we want to display the price which is the price in FIAT
-            let fiat_amount = element.parentElement.querySelector(".btc-parent").innerHTML;
+            let fiat_amount = element.parentElement.querySelector(".price-parent").innerHTML;
             # console.log(fiat_amount);
             
             # then we convert the amount of the price in FIAT to BTC
             constant = fiat_amount/btcPrice;
-            element.insertAdjacentHTML("beforeend", "Current value : BTC" + " " + numberWithCommas(constant));
+            element.insertAdjacentHTML("beforeend", "Current value in BTC" + " " + numberWithCommas(constant));
           })
 ```
 
@@ -101,9 +105,9 @@ The same for LTC :
 
           const ltcPrice = json.rates.LTC;
           divLTC.forEach((element) => {
-            let constant = element.parentElement.querySelector(".ltc-parent").innerHTML;
+            let constant = element.parentElement.querySelector(".price-parent").innerHTML;
             constant = constant/ltcPrice;
-            element.insertAdjacentHTML("beforeend", "Current value : LTC" + " " + numberWithCommas(constant));
+            element.insertAdjacentHTML("beforeend", "Current value in LTC" + " " + numberWithCommas(constant));
           }) ```
 
 
@@ -112,16 +116,13 @@ The same for ETH :
 ```
           const ethPrice = json.rates.ETH;
           divETH.forEach((element) => {
-            let constant = element.parentElement.querySelector(".eth-parent").innerHTML;
+            let constant = element.parentElement.querySelector(".price-parent").innerHTML;
             constant = constant/ethPrice;
-            element.insertAdjacentHTML("beforeend", "Current value : ETH" + " " + numberWithCommas(constant));
+            element.insertAdjacentHTML("beforeend", "Current value in ETH" + " " + numberWithCommas(constant));
           })
           # here is the way to make a test to have acces to all the JSON from CoinLayer
           # console.log(json.rates);
       }
-    });
-  }
-};
 ```
 
 ## Now some HTML code to explain a bit more the code : 
@@ -130,12 +131,12 @@ The same for ETH :
 
 Reminder of how the code above works : 
 
-We used ```document.querySelectorAll(".btc-price");``` to display the code beforend in class tag, and also ```parentElement.querySelector(".btc-parent").innerHTML```to get the value 'The_price' which refers to the price of the product. 
+We used ```document.querySelectorAll(".btc-price");``` to display the code beforend in class tag, and also ```parentElement.querySelector(".price-parent").innerHTML```to get the value 'The_price' which refers to the price of the product. 
 
 ```
 <body>
     <div class="XXXXXXX">
-        <abbr> Name_of_your_product: <i class="btc-parent"> The_price </i></abbr>
+        <abbr> Name_of_your_product: <i class="price-parent"> The_price </i></abbr>
         <div class="btc-price">
             <p> Value in Bitcoin </p>
         </div>
@@ -152,7 +153,6 @@ We used ```document.querySelectorAll(".btc-price");``` to display the code befor
 ```
 ----------------------------------------------------------------------------------------------------------------------------
 #### Hope it was useful, thanks for the reading :octocat:	
-----------------------------------------------------------------------------------------------------------------------------
-License: MIT
+Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 
 
-Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 	
+License: MIT
