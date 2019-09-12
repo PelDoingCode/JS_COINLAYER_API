@@ -12,7 +12,7 @@ Four steps  :desktop_computer: :
 4. Use Javascript (ES6) to interact with the DOM using events
 
 ----------------------------------------------------------------------------------------------------------------------------
-###### :warning: Use the code in app.js in the repository, and be carefull below I did the code to go from FIAT to crypto, in app.js it's the opposite :warning:
+###### :warning: Use the code in app.js in the repository, and be carefull below I did the code to go from FIAT to crypto, in app.js it's the opposite
 
 
 ##  Simple API call to get the price of BTC :  
@@ -46,7 +46,8 @@ Here is the code from app.js file but explained, like that you can more easily a
 Create a variable to add your public key (the one in used doesn't work, use yours) to make your code more lisible :
 ```
 let endpoint = 'live'
-let access_key = 'b93a2f2c2e7899142fc061d693de0dc5'
+# replace here by your key from coinlayer (this one doesn't work of course :trollface:) 
+let access_key = 'b93a2f2c2e7899342fc061d693de0dc5'
 ```
 
 
@@ -61,7 +62,7 @@ const apiCall = (selector, options = {}) => {
 
 Here is a way to make price more lisible for human using the comma system, do not hesitate to change it : 
 *Only useful for huge amount in crypto currency.....* <Enter>
-* To have a better display do not hesitate (especially for BTC) to talk in sats or whatever to have a better number and not something like 0.000123456 for example*
+ *To have a better display do not hesitate (especially for BTC) to talk in sats or whatever to have a better number and not something like 0.000123456 for example*
     
 ```
    function numberWithCommas(x) {
@@ -155,4 +156,4 @@ We used ```document.querySelectorAll(".btc-price");``` to display the code befor
 #### Hope it was useful, thanks for the reading :octocat:	
 Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 
 
-License: MIT
+License: MIT :octocat:
