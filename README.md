@@ -1,6 +1,6 @@
 ## An easy way to get cryptocurrency price on your webapp : 
 
-###### Repository to add a relevant example to COINLAYER crypto-price API documentation : [CoinLayer](https://coinlayer.com/) :zap:
+###### :zap: Repository to add a relevant example to COINLAYER crypto-price API documentation : [CoinLayer](https://coinlayer.com/) :zap:
 
 #### How to get the price from CoinLayer in your web page using **JQUERY** and **AJAX** ? :dragon_face:
 
