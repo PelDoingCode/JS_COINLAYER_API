@@ -1,4 +1,6 @@
-## An easy way to get cryptocurrency price on your webapp : 
+# Spec API COINLAYER for Bitcoin price for example : 
+
+## An easy way to get cryptocurrency price on your webapp :alien: : 
 
 ###### :zap: Repository to add a relevant example to COINLAYER crypto-price API documentation : [CoinLayer](https://coinlayer.com/) :zap:
 
