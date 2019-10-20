@@ -1,4 +1,4 @@
-# Spec API COINLAYER for Bitcoin price for example : 
+  # Spec API COINLAYER for Bitcoin price for example 
 
 ## An easy way to get cryptocurrency price on your webapp :alien: : 
 
