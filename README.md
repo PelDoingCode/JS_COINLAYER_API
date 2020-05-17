@@ -176,6 +176,6 @@ document.querySelector(".inline-price").innerHTML = "Your product worth" + " " +
 
 ----------------------------------------------------------------------------------------------------------------------------
 #### Hope it was useful, thanks for the reading :octocat:	
-Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/PelDoingCode :point_left: 
+Come follow my Github account for more content :nerd_face: : :point_right: https://github.com/glaiveVII :point_left: 
 
 License: MIT :octocat:
